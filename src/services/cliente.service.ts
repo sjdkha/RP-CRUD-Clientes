@@ -15,4 +15,8 @@ export class ClienteService {
         const cliente = await this.clienteRepository.findClientByID(uuid)
         return cliente
     }
+    // public suma(a,b){
+    //     return a+b
+    // }
+    
 }
