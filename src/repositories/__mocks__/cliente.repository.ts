@@ -1,5 +1,6 @@
 import { ICliente } from '../../dto/cliente.interfaz';
 
+
 const mockCliente = {
     uuid: "000-000",
     nombre: "Lionel",

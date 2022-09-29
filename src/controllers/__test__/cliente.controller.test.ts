@@ -2,6 +2,41 @@ import { ClienteController } from "../../controllers/cliente.controller";
 import { MockRepository } from "../../repositories/mock.cliente.repo";
 import { ICliente } from "../../dto/cliente.interfaz";
 
+import { ClienteService } from "../../services/cliente.service"
+import { ClienteRepository } from "../../repositories/cliente.repository";
+import { Request, Response, NextFunction } from "express";
+
+jest.mock("../../repositories/cliente.repository");
+
+
+
+describe("clienteService", () => {
+
+    let clienteRepository= <ClienteRepository>{};
+    let clienteService = new ClienteService(clienteRepository);
+
+    const mockCliente = {
+        uuid: "000-000",
+        nombre: "Lionel",
+        apellido_paterno: "Messi",
+        apellido_materno: "PSG",
+        correo: "lio@psg.com",
+        telefono: "924242424",
+        rut: "6554655465"
+    };
+
+    it("definir servicio", () => {
+        expect(clienteService).toBeDefined();
+    });
+
+});
+
+
+
+
+
+
+
 xdescribe('Get - datos', () => {
     it('comparando datos', () => {
         const expected = 'Hola hola';
@@ -9,7 +44,6 @@ xdescribe('Get - datos', () => {
         expect(result).toStrictEqual(expected);
     });
 });
-    
 
 // xdescribe("controlador.getController", () => {
 //     let repository: MockRepository;

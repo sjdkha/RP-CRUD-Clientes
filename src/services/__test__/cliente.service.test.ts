@@ -1,4 +1,4 @@
-import { ClienteService } from "../cliente.service"
+import { ClienteService } from "../../services/cliente.service"
 import { ClienteRepository } from "../../repositories/cliente.repository";
 
 jest.mock("../../repositories/cliente.repository");
