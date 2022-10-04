@@ -44,18 +44,10 @@ describe("clienteService", () => {
     it("crear cliente", async () => {
         jest.spyOn(clienteService, 'registerCliente').mockResolvedValue(mockCliente2);
         let response = await clienteService.registerCliente(mockCliente2); 
-        // let registrarCliente = await clienteService.registerCliente({
-        //     nombre: "Lionel",
-        //     apellido_paterno: "Messi",
-        //     apellido_materno: "PSG",
-        //     correo: "lio@psg.com",
-        //     telefono: "924242424",
-        //     rut: "6554655465"
-        // });
         expect(response).toEqual(mockCliente);
     });
 
-    it("buscar cliente ",async()=>{
+    it("buscar cliente ", async () => {
         jest.spyOn(clienteService, 'getDetailCliente').mockReturnValue(Promise.resolve(mockCliente));
         let findCliente = await clienteService.getDetailCliente("000-000");
         expect(findCliente).toEqual(mockCliente);
